@@ -1,0 +1,120 @@
+#!/bin/bash 
+
+# Session 1 tasks
+
+# # create a file called /var/www/html/ouput.txt
+# # write the message "This is a test output" into the file using output redirection
+# echo "This is a test output" > /var/www/html/output.txt
+
+# appends the current date and time to the file called /var/www/html/logs.txt using >> (append redirection)
+# run sctipt multiple times to see the log grow with each run 
+# date >> /var/www/html/logs.txt
+
+# Prints the values of predefined environment variables: PATH, HOME, and USER.
+# Creates a custom environment variable MY_VAR and prints its value.
+
+# MY_VAR="This is a custom environment" 
+# echo "$PATH"
+# echo "$HOME"
+# echo "$USER"
+# echo "$MY_VAR"
+
+# Retrives and logs the current status of the Apache web server 
+# Use ans envirenmonet variable to store the Apache service name9e.g apache 2 or httpd 
+# logs the status and date to a file called /var/www/html/apache_status.log each time the script is run 
+
+
+# # $(systemctl status httpd | head -n 3 | tail -n 1 | awk -F: '{ print $1 }') > /var/www/html/apache_status.log
+
+# Session 2 tasks.
+# read -p "Please provide your name, age and city where you live: " arg1 arg2 arg3
+# if [[ -n "$arg1" && -n "$arg2" && -n "$arg3" ]]; then  
+# echo "Thanks for the info"
+# echo " $arg1 $arg2 $arg3 "
+# else 
+# echo "provide more info"
+# fi  
+
+# echo " The proccess ID of this script is : $$" >> /var/www/html/process_log.txt
+# echo "The number of argumets passed the script is $#" >> /var/www/html/process_log.txt 
+
+# read -p "Please enter a directory that you want to check: " dir
+# if [ -d "$dir" ]; then 
+# echo "The directory exist" 
+# else 
+# echo "the directory does not exist"
+# fi 
+# echo "The exit status of the script is $? " 
+
+#session 3 
+# if [ -f "report.txt" ]; then 
+# echo "file exits" 
+# else
+# echo "Report created" > report.txt 
+# fi 
+
+# cat << option
+# Choose an option: 
+# 1)Show date
+# 2)List files
+# 3)Show user
+# 4)Exit
+# option
+
+# read -p "Enter your choice: " num
+
+# case $num in 
+# 1) date ;;
+# 2) ls -la ;;
+# 3) id ;; 
+# 4) echo "Bye" && exit ;;
+# *) echo "please enter the chosen numbers" 
+# esac 
+
+# for file in *.txt ; do 
+# mv $file backup$file
+# done 
+
+# read -p "enter a number" num
+# while (( num > 0 )); do
+#   echo $num
+#   ((num--))
+# done
+# echo "Times up" 
+#  Not accurate
+# read -p "Please enter a file name" name
+# if [ -f $name ] && [ -r $name ] && [ -w $name ] ; then
+# echo "file exist , its has r and w permissions" 
+# elif [ -f $name ] && ([ ! -r $name ] && [ ! -w $name ]); then
+# echo "file exist , nut not readible or writble" 
+# else 
+# echo "file doesn't exists"
+# fi  
+
+cat << opt
+Select an option:
+1.Delete all .tmp files
+2.Back up all .tmp files
+3.Exit 
+opt
+read -p "Enter your choice: "
+
+case $file in
+   1) for file in *.tmp; do 
+   if [ -f $file ]; then 
+   rm -r $file 
+   fi 
+   done ;;
+   2) for file in *.tmp ; do 
+   if [ -f $file ]; then 
+   mv $file backup_$file
+   fi 
+   done ;;
+   3) for file in *.tpm ; do 
+      if [ -f $file ]; then 
+      echo "file exist" | exit
+      fi 
+      done ;;
+esac
+      
+    
