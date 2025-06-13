@@ -385,49 +385,36 @@
 
 
 
-# students = {"Alice": 45, "Bob": 78, "Charlie": 52, "David": 33}
-# tar = 50
-# for key, value in students.items():
-#     if value >= tar :
-#         print(key,value)
+students = {"Alice": 45, "Bob": 78, "Charlie": 52, "David": 33}
+tar = 50
+for key, value in students.items():
+    if value >= tar :
+        print(key,value)
 
 
-# # Take an input and count the occurrences of each character.
-# # Input: programming
-# # Output: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}
-# count = 0
-# inp = input("Enter a word: ")
-# for ch in inp:
-#     print({ch})
+inp = input("Enter a word: ")
+def sliced(inp):
+    new = {}
+    for ch in inp:
+        if ch in new:
+            new[ch] += 1
+        else:
+            new[ch] = 1
+    return new
+print(sliced(inp))    
 
-# Take an input of list of numbers, find and print the unique numbers.
-# Input: [1, 2, 2, 3, 4, 4, 5]
-# Output: 1, 3, 5
 
-# num = input("Please enter a list of number: ").split()
-# un = []
-# for i in num :
-#     if i not in un:
-#         un.append(i)
-# print(un)
 
 
 dict1 = {"apple": 3, "banana": 5, "orange": 2}
 dict2 = {"banana": 2, "orange": 4, "grape": 6}
-sum = {}
 for key,value in dict1.items():
     if key not in dict2:
         print(key,value, "#Only in dic1:" )
-    elif key in dict2:
-        sum.setdefault(key, 0)
-        sum[key] += value
-        print(sum)
-
-    
-        
-    
-
-
-
-
+    if key in dict1 and key in dict2:
+        dict2[key] += value
+        print(key, dict2[key], f"# {dict1.get(key)} (from dict1)  {dict2.get(key)} (from dict2)")
+for key,value in dict2.items():
+    if key not in dict1:
+        print(key,value, "#Only in dict2")
 
