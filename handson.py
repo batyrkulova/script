@@ -65,5 +65,12 @@ elif pl1 == pl2 :
 else:
     print("please enter a correct input")
 
+inp = int(input("please enter number 1"))
+inp2 = int(input("please enter number 2"))
+print(inp * inp2)
+print(inp / inp2)
+upper(inp, inp2)# print(inp + inp2)
+print(inp - inp2)
+
 
 
