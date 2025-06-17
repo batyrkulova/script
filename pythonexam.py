@@ -106,5 +106,9 @@
 # for x in get_num():
 #     print(x)
 
+x = [0, 1, 2]
+x.insert(O, 1)
+print(x)
+
 
 

@@ -45,3 +45,25 @@ if inp > 0 and inp % 2 == 0:
 elif inp > 0 and inp % 2 != 0:
     print("It's possitive and odd ")
 
+
+passwd = input("Please enter a password: ")
+if (len(passwd)) >= 8 and "@" in passwd and " " not in passwd:
+    print("password strong")
+else:
+    print("Weak password")
+
+
+
+pl1 = input("player1: ")
+pl2 = input("player2: ")
+if pl1 == "rock" and pl2 == "scissors" or pl1 == "paper" and pl2 == "rock " or pl2 == "scissors" and pl1 == "paper" :
+    print("player 1 wins")
+elif pl2 == "rock" and pl1 == "scissors" or pl2 == "paper" and pl1 == "rock " or pl2 == "scissors" and pl1 == "paper" :
+    print("Player 2 wins")
+elif pl1 == pl2 :
+    print("Its a tie")
+else:
+    print("please enter a correct input")
+
+
+
