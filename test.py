@@ -52,6 +52,27 @@ for values in movies["films"]:
     if values[["rating"][0]] > values[["rating"][2]]:
         print(values["name"])
 
+def function(parameter):
+    if parameter == False:
+        return True
+
+
+print(function(False), function(True))
+
+def function(parameter = False):
+    return parameter
+
+
+print(function(True), function())
+
+
+def function(parameter):
+    parameter[0] = 2
+
+
+the_list = [1]
+function(the_list)
+print(the_list)
 
 
 
