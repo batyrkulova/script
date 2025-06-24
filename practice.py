@@ -419,3 +419,12 @@ for key,value in dict2.items():
         print(key,value, "#Only in dict2")
 for i in range (1,3)
     print(I)
+
+
+
+inp = list(map(int,input("Please enter numbets seperated by spaces: ").split()))
+uniqu = []
+for i in inp:
+    if i not in uniqu:
+        uniqu.append(i)
+print(uniqu)
